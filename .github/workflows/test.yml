@@ -57,3 +57,10 @@ jobs:
         with:
           name: my_repo.zip
           path: my_repo.zip
+
+      - name: Print files
+        run: |
+          echo '5'
+          pwd
+          echo '6'
+          ls -d
