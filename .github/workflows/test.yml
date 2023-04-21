@@ -98,7 +98,15 @@ jobs:
             echo "$FILE does not exist"
           fi
 
-          FILE=myRepo/myRepo.zip
+          FILE=myRepo.zip/myRepo.zip
+          if test -f "$FILE"; 
+          then
+            echo "$FILE exists."
+          else
+            echo "$FILE does not exist"
+          fi
+
+          FILE=./myRepo.zip/myRepo.zip
           if test -f "$FILE"; 
           then
             echo "$FILE exists."
