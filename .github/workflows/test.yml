@@ -83,14 +83,10 @@ jobs:
     steps:
       - name: Download zip file
         uses: actions/checkout@v3
-      - name: Download zip file 2
+      - name: Downlod Artifacts 
         uses: actions/download-artifact@v3
-        with:
-          name: my-repo.zip
-      - name: Print file
-        run: |
-          pwd
-          ls
+      - name: List Files
+        run: ls -R
       - name: Unzip file
         run: |
           unzip my_repo.zip
