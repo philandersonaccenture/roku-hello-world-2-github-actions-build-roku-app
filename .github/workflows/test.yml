@@ -90,25 +90,8 @@ jobs:
       - name: Unzip file
         run: |
 
-          FILE=myRepo.zip
-          if test -f "$FILE"; 
-          then
-            echo "$FILE exists."
-          else
-            echo "$FILE does not exist"
-          fi
 
           FILE=myRepo.zip/myRepo.zip
-          if test -f "$FILE"; 
-          then
-            echo "$FILE exists."
-            echo "unzipping file $FILE now ..."
-            unzip -o $FILE
-          else
-            echo "$FILE does not exist"
-          fi
-
-          FILE=./myRepo.zip/myRepo.zip
           if test -f "$FILE"; 
           then
             echo "$FILE exists."
@@ -122,10 +105,5 @@ jobs:
           echo "pwd" pwd
           echo "listing files"
           ls -Rlad
-
-          echo "trying unzip"
-
-          echo "not unzipping with unzip myRepo.zip as file does not exist"
-
           pwd
           ls -R
