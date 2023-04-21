@@ -103,7 +103,7 @@ jobs:
           then
             echo "$FILE exists."
             echo "unzipping file $FILE now ..."
-            unzip $FILE
+            unzip $FILE /y
           else
             echo "$FILE does not exist"
           fi
@@ -113,7 +113,7 @@ jobs:
           then
             echo "$FILE exists."
             echo "unzipping file $FILE now ..."
-            unzip $FILE
+            unzip $FILE /y
           else
             echo "$FILE does not exist"
           fi
