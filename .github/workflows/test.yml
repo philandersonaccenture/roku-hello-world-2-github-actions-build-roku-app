@@ -38,6 +38,7 @@ jobs:
           
         
   create_and_upload_zip_file:
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -74,3 +75,24 @@ jobs:
           ls
           ls -R
           ls -Rlad
+
+
+    download_zip_file:    
+    name: Download zip file
+    needs: create_and_upload_zip_file
+    runs-on: windows-latest
+    steps:
+      - name: Download zip file
+        uses: actions/download-artifact@v3
+        with:
+          name: my-repo.zip
+      - name: Print file
+        run: |
+          pwd
+          ls
+      - name: Unzip file
+        run: |
+          unzip my_repo.zip
+          pwd
+          ls -R
+          
