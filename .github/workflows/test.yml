@@ -71,7 +71,7 @@ jobs:
         run: |
           echo '5'
           pwd
-          echo '6'
+          echo '6.'
           ls
           ls -R
           ls -Rlad
@@ -103,7 +103,7 @@ jobs:
           then
             echo "$FILE exists."
             echo "unzipping file $FILE now ..."
-            unzip $FILE /y
+            unzip -o $FILE
           else
             echo "$FILE does not exist"
           fi
@@ -113,7 +113,7 @@ jobs:
           then
             echo "$FILE exists."
             echo "unzipping file $FILE now ..."
-            unzip $FILE /y
+            unzip -o $FILE
           else
             echo "$FILE does not exist"
           fi
