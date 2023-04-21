@@ -82,11 +82,11 @@ jobs:
     needs: create_and_upload_zip_file
     runs-on: ubuntu-latest
     steps:
-      - name: Download zip file
+        name: Download zip file
+        uses: actions/checkout@v3
         uses: actions/download-artifact@v3
         with:
           name: my-repo.zip
-          path: my_repo.zip
       - name: Print file
         run: |
           pwd
@@ -96,4 +96,16 @@ jobs:
           unzip my_repo.zip
           pwd
           ls -R
+
+
+
+          
+
+
+- uses: actions/download-artifact@v3
+  with:
+    name: my-artifact
+    
+- name: Display structure of downloaded files
+  run: ls -R
           
