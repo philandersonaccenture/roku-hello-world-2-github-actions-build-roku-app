@@ -94,9 +94,13 @@ jobs:
           if test -f "$FILE"; then
             echo "$FILE exists."
           fi
-          pwd
+          echo "pwd" pwd
+          echo "listing files"
           ls -Rlad
 
-          unzip my_repo.zip
+          echo "trying unzip"
+
+          echo "not unzipping with unzip my_repo.zip as file does not exist"
+
           pwd
           ls -R
