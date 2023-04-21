@@ -45,9 +45,9 @@ jobs:
       - name: Create Zip File
         run: |
           pwd
-          ls
+          ls -d
           zip -r -FS my_repo.zip .
-          ls
+          ls -d
       - name: Upload Zip File
         uses: actions/upload-artifact@v3
         with:
