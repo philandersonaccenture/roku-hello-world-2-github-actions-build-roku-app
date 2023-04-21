@@ -71,6 +71,6 @@ jobs:
           echo '5'
           pwd
           echo '6'
-          la
-          la -R
+          ls
+          ls -R
           ls -Rlad
