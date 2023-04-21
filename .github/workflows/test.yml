@@ -47,11 +47,18 @@ jobs:
           echo '1'
           pwd
           echo '2'
-          ls -d
+          ls -lad
           echo '3'
           zip -r -FS my_repo.zip .
           echo '4'
-          ls -d
+          ls
+          ls -lad
+
+          FILE=my_repo.zip
+          if test -f "$FILE"; then
+            echo "$FILE exists."
+          fi
+          
       - name: Upload Zip File
         uses: actions/upload-artifact@v3
         with:
@@ -63,4 +70,5 @@ jobs:
           echo '5'
           pwd
           echo '6'
-          ls -d
+          la
+          ls -lad
