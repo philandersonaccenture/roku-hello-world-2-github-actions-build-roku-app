@@ -80,7 +80,7 @@ jobs:
   download_zip_file:    
     name: Download zip file
     needs: create_and_upload_zip_file
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download zip file
         uses: actions/download-artifact@v3
