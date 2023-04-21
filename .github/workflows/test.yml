@@ -89,6 +89,14 @@ jobs:
         run: ls -R
       - name: Unzip file
         run: |
-          unzip my_repo
+
+          FILE=my_repo.zip
+          if test -f "$FILE"; then
+            echo "$FILE exists."
+          fi
+          pwd
+          ls -Rlad
+
+          unzip my_repo.zip
           pwd
           ls -R
