@@ -50,13 +50,13 @@ jobs:
           echo '2'
           ls -lad
           echo '3'
-          zip -r -FS my_repo.zip .
+          zip -r -FS myRepo.zip .
           echo '4'
           ls
           ls -R
           ls -Rlad
 
-          FILE=my_repo.zip
+          FILE=myRepo.zip
           if test -f "$FILE"; then
             echo "$FILE exists."
           fi
@@ -64,8 +64,8 @@ jobs:
       - name: Upload Zip File
         uses: actions/upload-artifact@v3
         with:
-          name: my_repo.zip
-          path: my_repo.zip
+          name: myRepo.zip
+          path: myRepo.zip
 
       - name: Print files
         run: |
@@ -90,17 +90,30 @@ jobs:
       - name: Unzip file
         run: |
 
-          FILE=my_repo.zip
-          if test -f "$FILE"; then
+          FILE=myRepo.zip
+          if test -f "$FILE"; 
+          then
             echo "$FILE exists."
+          else
+            echo "$FILE does not exist"
           fi
+
+          FILE=myRepo/myRepo.zip
+          if test -f "$FILE"; 
+          then
+            echo "$FILE exists."
+          else
+            echo "$FILE does not exist"
+          fi
+
+
           echo "pwd" pwd
           echo "listing files"
           ls -Rlad
 
           echo "trying unzip"
 
-          echo "not unzipping with unzip my_repo.zip as file does not exist"
+          echo "not unzipping with unzip myRepo.zip as file does not exist"
 
           pwd
           ls -R
