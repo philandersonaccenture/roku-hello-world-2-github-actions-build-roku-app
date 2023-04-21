@@ -89,6 +89,6 @@ jobs:
         run: ls -R
       - name: Unzip file
         run: |
-          unzip my_repo.zip
+          unzip ./my_repo.zip
           pwd
           ls -R
